@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
     LoginPage loginPage;
-    private static String email;
-    private static String pass;
     WebDriver driver;
 
     public LoginPage(WebDriver driver){
@@ -18,35 +16,29 @@ public class LoginPage {
     }
 
 
-    public void setEmail(String email) {
-
-        this.email = email;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-
-
+    By girisYap = By.xpath("//*[@title='Giriş Yap']");
+    By sifre = By.xpath("//*[@class='qjixn8-0 sc-1bydi5r-0 kNKwwK']");
+    By userName = By.id("L-UserNameField");
+    By pass = By.id("L-PasswordField");
+    By login = By.id("gg-login-enter");
     public void loginGitiGidiyor(){
         try {
             Actions actions = new Actions(driver);
 
-            driver.findElement(By.xpath("//*[@title='Giriş Yap']")).click();
+            driver.findElement(girisYap).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@class='qjixn8-0 sc-1bydi5r-0 kNKwwK']")).click();
+            driver.findElement(sifre).click();
             Thread.sleep(1000);
-            driver.findElement(By.id("L-UserNameField")).click();
+            driver.findElement(userName).click();
             Thread.sleep(1000);
-            driver.findElement(By.id("L-UserNameField")).sendKeys("kocakmusstafa@gmail.com");
+            driver.findElement(userName).sendKeys("kocakmusstafa@gmail.com");
             Thread.sleep(1000);
-            driver.findElement(By.id("L-PasswordField")).click();
+            driver.findElement(pass).click();
             Thread.sleep(1000);
-            driver.findElement(By.id("L-PasswordField")).sendKeys("xxxxxx");
+            driver.findElement(pass).sendKeys("Mustafa-123321");
             Thread.sleep(1000);
 
-            driver.findElement(By.id("gg-login-enter")).click();
+            driver.findElement(login).click();
 
 
             Thread.sleep(3000);

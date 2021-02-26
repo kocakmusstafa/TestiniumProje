@@ -15,7 +15,8 @@ public class ProductPage {
 
 
 
-
+    By search = By.xpath("//*[@class='sc-4995aq-0 sc-14oyvky-0 iYMTpq']");
+    By searchButton = By.xpath("//*[@class='qjixn8-0 sc-1bydi5r-0 hKfdXF']");
     public ProductPage(WebDriver driver){
         this.driver = driver;
     }
@@ -25,24 +26,25 @@ public class ProductPage {
     public void sendAndClickSearch(){
         try {
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@class='sc-4995aq-0 sc-14oyvky-0 iYMTpq']")).click();
+            driver.findElement(search).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@class='sc-4995aq-0 sc-14oyvky-0 iYMTpq']")).sendKeys("bilgisayar");
+            driver.findElement(search).sendKeys("bilgisayar");
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@class='qjixn8-0 sc-1bydi5r-0 hKfdXF']")).click();
+            driver.findElement(searchButton).click();
             Thread.sleep(2000);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+    By second = By.linkText("2");
     public void secondPage(){
         try {
 
-            Thread.sleep(1000);
+            Thread.sleep(5000);
             driver.get("https://www.gittigidiyor.com/arama/?k=bilgisayar&sf=2");
-            //driver.findElement(By.xpath("//a[text()='2']")).click();
-            Thread.sleep(2000);
+            //driver.findElement(second).click();
+            Thread.sleep(5000);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

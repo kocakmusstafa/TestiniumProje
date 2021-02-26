@@ -13,11 +13,13 @@ public class BaskedPage {
     }
 
 
-    WebElement hoverElement ;
+    By addButton = By.xpath("//*[@product-id='649249296']//*[@class='gg-ui-button gg-ui-btn-primary']");
+    By goBasked = By.xpath("//*[@class='basket-icon-title hidden-m hidden-t']");
+    By deleteButton = By.xpath("//*[@data-id='649249296']//*[text()='Sil']");
     public void addBasket(){
         try {
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@product-id='649249296']//*[@class='gg-ui-button gg-ui-btn-primary']")).click();
+            driver.findElement(addButton).click();
             Thread.sleep(1000);
 
         } catch (InterruptedException e) {
@@ -27,7 +29,7 @@ public class BaskedPage {
     public void goToBasked(){
         try {
             Thread.sleep(2000);
-            driver.findElement(By.xpath("//*[@class='basket-icon-title hidden-m hidden-t']")).click();
+            driver.findElement(goBasked).click();
 
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -38,7 +40,7 @@ public class BaskedPage {
     public void deleteBasked(){
         try {
             Thread.sleep(2000);
-            driver.findElement(By.xpath("//*[@data-id='649249296']//*[text()='Sil']")).click();
+            driver.findElement(deleteButton).click();
 
             Thread.sleep(2000);
         } catch (InterruptedException e) {

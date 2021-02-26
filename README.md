@@ -9,7 +9,6 @@ Selenium Web Otomasyon
 - Sonuca göre sergilenen ürünlerden rastgele bir ürün seçilir.
 - Seçilen ürün sepete eklenir.
 - Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatının doğruluğu karşılaştırılır.
-- Adet arttırılarak ürün adedinin 2 olduğu doğrulanır.
 - Ürün sepetten silinerek sepetin boş olduğu kontrol edilir.
 
 Kodlar TestiniumProje/TestiniumProje/src/test/java/com/mustafa/ altında yazılmıştır.
